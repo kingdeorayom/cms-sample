@@ -149,7 +149,7 @@ const UsersTable = () => {
           <TableRow>
             <TableCell className="font-medium">ABC123</TableCell>
             <TableCell>John Doe</TableCell>
-            <TableCell>it@devant.com</TableCell>
+            <TableCell>admin@devant.com</TableCell>
             <TableCell>IT</TableCell>
             <TableCell>
               <div className="flex flex-row space-x-2">

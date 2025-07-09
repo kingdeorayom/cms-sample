@@ -15,27 +15,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import {
   Table,
   TableBody,
@@ -53,7 +32,7 @@ export default function WarrantyRegistrationPage() {
   return (
     <Dashboard>
       <SiteHeader title="Warranty Registration Requests" />
-      {accountType === "admin" || accountType === "marketing" ? (
+      {accountType === "admin" || accountType === "service" ? (
         <>
           <div className="p-5 my-5 flex flex-col space-y-4">
             <h1 className="text-2xl font-bold">

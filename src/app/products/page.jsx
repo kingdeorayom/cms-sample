@@ -3,6 +3,18 @@
 import Dashboard from "@/components/dashboard/dashboard";
 import { SiteHeader } from "@/components/dashboard/site-header";
 import NoAccess from "@/components/NoAccess";
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,20 +24,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
 import { useAccountStore } from "@/store/useAccountStore";
 
 import Image from "next/image";
@@ -61,8 +60,57 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <AlertDialog>
+                          <AlertDialogTrigger asChild>
+                            <Button variant="link" className="text-destructive">
+                              Delete
+                            </Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>
+                                Are you absolutely sure?
+                              </AlertDialogTitle>
+                              <AlertDialogDescription>
+                                This action cannot be undone. This will
+                                permanently delete this product and remove all
+                                data from the server.
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>Cancel</AlertDialogCancel>
+                              <AlertDialogAction className="bg-destructive">
+                                Continue
+                              </AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -71,8 +119,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className='text-destructive'>Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -82,8 +154,34 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className="text-destructive">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -92,8 +190,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className='text-destructive'>Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -103,8 +225,34 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className="text-destructive">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -113,8 +261,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className='text-destructive'>Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -124,8 +296,34 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className="text-destructive">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -134,8 +332,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className='text-destructive'>Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -145,8 +367,34 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className="text-destructive">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -155,8 +403,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className='text-destructive'>Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -166,8 +438,34 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className="text-destructive">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -176,8 +474,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className='text-destructive'>Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -187,8 +509,34 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link" className="text-destructive">
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -197,8 +545,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link">Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
               <Card>
@@ -208,8 +580,32 @@ export default function ProductsPage() {
                     65-INCH SMART QUANTUM 4K UHD TV
                   </CardDescription>
                   <CardAction>
-                    <Button variant="link">Edit</Button>
-                    <Button variant="link">Delete</Button>
+                    <Link href="/products/edit/65QUHV05">
+                      <Button variant="link">Edit</Button>
+                    </Link>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link">Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </CardAction>
                 </CardHeader>
                 <CardContent>
@@ -218,8 +614,32 @@ export default function ProductsPage() {
                   </div>
                 </CardContent>
                 {/* <CardFooter>
-                  <Button variant="link">Edit</Button>
-                  <Button variant="link">Delete</Button>
+                  <Link href='/products/edit/65QUHV05'>
+                  <Button variant="link" >Edit</Button>
+                  </Link>
+                  <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="link">Delete</Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>
+                            Are you absolutely sure?
+                          </AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete this product and remove all data from the
+                            server.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction className="bg-destructive">
+                            Continue
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                 </CardFooter> */}
               </Card>
             </div>
