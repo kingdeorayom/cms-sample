@@ -1,21 +1,21 @@
 "use client";
 
-import * as React from "react";
 import {
+  IconBox,
   IconCamera,
   IconChartBar,
   IconDashboard,
-  IconDatabase,
   IconFileAi,
   IconFileDescription,
-  IconFileWord,
-  IconFolder,
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
+  IconMap2,
+  IconNews,
   IconReport,
   IconSearch,
   IconSettings,
+  IconShoppingBag,
   IconUserCircle,
   IconUsers,
 } from "@tabler/icons-react";
@@ -42,40 +42,45 @@ const data = {
   },
   navMain: [
     {
-      title: "Dashboard",
-      url: "#",
+      title: "Overview",
+      url: "overview",
       icon: IconDashboard,
     },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
-    },
+    // {
+    //   title: "Analytics",
+    //   url: "analytics",
+    //   icon: IconChartBar,
+    // },
     {
       title: "Products",
-      url: "#",
-      icon: IconChartBar,
+      url: "products",
+      icon: IconBox,
+    },
+    // {
+    //   title: "Store Locator",
+    //   url: "store-locator",
+    //   icon: IconShoppingBag,
+    // },
+    // {
+    //   title: "Service Centers",
+    //   url: "service-centers",
+    //   icon: IconMap2,
+    // },
+    {
+      title: "News and Events",
+      url: "news-and-events",
+      icon: IconNews,
     },
     {
-      title: "Store Locator",
-      url: "#",
-      icon: IconFolder,
+      title: "Warranty Registration",
+      url: "warranty-registration",
+      icon: IconReport,
     },
-    {
-      title: "Service Centers",
-      url: "#",
-      icon: IconUsers,
-    },
-    {
-      title: "Warranty",
-      url: "#",
-      icon: IconUsers,
-    },
-    {
-      title: "Careers",
-      url: "#",
-      icon: IconUsers,
-    },
+    // {
+    //   title: "Careers",
+    //   url: "careers",
+    //   icon: IconListDetails,
+    // },
   ],
   navClouds: [
     {
@@ -145,14 +150,14 @@ const data = {
   documents: [
     {
       name: "Users",
-      url: "#",
+      url: "users",
       icon: IconUsers,
     },
-    {
-      name: "Account",
-      url: "#",
-      icon: IconUserCircle,
-    },
+    // {
+    //   name: "Account",
+    //   url: "account",
+    //   icon: IconUserCircle,
+    // },
   ],
 };
 

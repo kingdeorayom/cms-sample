@@ -24,10 +24,14 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { Badge } from "../ui/badge";
+import { useAccountStore } from "@/store/useAccountStore";
 
 export function NavUser({ user }) {
   const { isMobile } = useSidebar();
 
+  const accountType = useAccountStore((state) => state.accountType);
+  console.log(accountType);
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -43,8 +47,9 @@ export function NavUser({ user }) {
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
-                <span className="text-muted-foreground truncate text-xs">
-                  {user.email}
+                <span className="text-muted-foreground truncate text-xs capitalize">
+                  {/* {user.email} */}
+                  {accountType}
                 </span>
               </div>
               <IconDotsVertical className="ml-auto size-4" />
